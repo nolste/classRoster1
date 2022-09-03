@@ -21,8 +21,8 @@ void Student::setNumberOfDays(int day1, int day2, int day3) {
 	numberOfdays[1] = day2;
 	numberOfdays[2] = day3;
 };
-void Student::setDegreeProgram(string degreeProgramVal) {
-	degreeProgram = degreeProgramVal;
+void Student::setDegreeProgram(DegreeProgram degreeProgramVal) {
+	degreeProgram = { degreeProgramVal };
 };
 //getters
 string Student::getStudentID() {
@@ -40,19 +40,26 @@ string Student::getEmailAddress() {
 int Student::getAge() {
 	return age;
 };
-//////////////////////test this method below////////////////////
+
 const int* Student::getNumberofDays() const {
 	return numberOfdays;
 
 };
 string Student::getDegreeProgram() {
-	return degreeProgram;
+	if (degreeProgram == DegreeProgram::SECURITY) {
+		return DegreeProgramStrings[0];
+	}
+	else if (degreeProgram == DegreeProgram::NETWORK) {
+		return DegreeProgramStrings[1];
+	}
+	else return DegreeProgramStrings[2];
+	
 };
 //constructor
 Student::Student(string studentIDInput, string firstNameInput,
 	string lastNameInput, string emailAddressInput, int ageInput,
 	int numofdays1, int numofdays2, int numofdays3,
-	string degreeProgramInput)
+	DegreeProgram degreeProgramInput)
 	:studentID{ studentIDInput }, firstName{ firstName }, lastName{ lastNameInput },
 	emailAddress{ emailAddressInput }, age{ ageInput }, numberOfdays{ numofdays1,numofdays2,numofdays3 },
 	degreeProgram{ degreeProgramInput } {
@@ -66,10 +73,19 @@ void Student::print() {
 	std::cout << this->lastName<<" ";
 	std::cout << this->emailAddress<<" ";
 	std::cout << this->age<<" ";
+	
 	for (auto num : numberOfdays) {
-		std::cout <<" "<< num << ", ";
+		std::cout << " " << num << ", ";
+	};
+	if (degreeProgram == DegreeProgram::SECURITY) {
+		std::cout << DegreeProgramStrings[0];
 	}
-	std::cout << this->degreeProgram;
+	else if (degreeProgram == DegreeProgram::NETWORK) {
+		std::cout << DegreeProgramStrings[1];
+	}
+	else std::cout << DegreeProgramStrings[2];
+	
+	
 
-
+		
 };
