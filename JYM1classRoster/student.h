@@ -14,7 +14,9 @@ private:
 	string emailAddress;
 	int age;
 	int numberOfdays [3];
-	string degreeProgram;
+	DegreeProgram degreeProgram;
+
+	
 
 public:
 	//setters
@@ -24,7 +26,7 @@ public:
 	void setEmailAddress(string emailAddressVal);
 	void setAge(int ageVal);
 	void setNumberOfDays(int day1, int day2, int day3);
-	void setDegreeProgram(string degreeProgramVal);
+	void setDegreeProgram(DegreeProgram degreeProgramVal);
 	//getters
 	string getStudentID();
 	string getFirstName();
@@ -37,7 +39,7 @@ public:
 	Student(string studentIDInput, string firstNameInput,
 		string lastNameInput, string emailAddressInput, int ageInput,
 		int numofdays1, int numofdays2, int numofdays3,
-		string degreeProgramInput);
+		DegreeProgram degreeProgramInput);
 	//print method
 	void print();
 
