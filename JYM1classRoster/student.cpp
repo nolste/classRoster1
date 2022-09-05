@@ -60,7 +60,7 @@ Student::Student(string studentIDInput, string firstNameInput,
 	string lastNameInput, string emailAddressInput, int ageInput,
 	int numofdays1, int numofdays2, int numofdays3,
 	DegreeProgram degreeProgramInput)
-	:studentID{ studentIDInput }, firstName{ firstName }, lastName{ lastNameInput },
+	:studentID{ studentIDInput }, firstName{ firstNameInput }, lastName{ lastNameInput },
 	emailAddress{ emailAddressInput }, age{ ageInput }, numberOfdays{ numofdays1,numofdays2,numofdays3 },
 	degreeProgram{ degreeProgramInput } {
 
@@ -74,8 +74,8 @@ void Student::print() {
 	std::cout << this->emailAddress<<" ";
 	std::cout << this->age<<" ";
 	
-	for (auto num : numberOfdays) {
-		std::cout << " " << num << ", ";
+	for (int i=0; i < 3; ++i) {
+		std::cout << " " << getNumberofDays()[i] << ", ";
 	};
 	if (degreeProgram == DegreeProgram::SECURITY) {
 		std::cout << DegreeProgramStrings[0];
@@ -89,3 +89,16 @@ void Student::print() {
 
 		
 };
+
+void Student::print2() {
+	std::cout << getStudentID() << " ";
+	std::cout << getFirstName() << " ";
+	std::cout << getLastName() << " ";
+	std::cout << getEmailAddress() << " ";
+	std::cout << getAge() << " ";
+	//add .sizeoperator or some other size detecting option
+	for (int i=0; i < 3; ++i) {
+		std::cout << " " << getNumberofDays()[i] << ", ";
+	};
+	std::cout << getDegreeProgram() << " ";
+}

@@ -42,6 +42,7 @@ public:
 		DegreeProgram degreeProgramInput);
 	//print method
 	void print();
+	void print2();
 
 
 

@@ -20,4 +20,8 @@ int main()
     std::cout << "bill's num of days " << bill.getNumberofDays()[0] << " obrigado" << std::endl;
     
     bill.print();
+    std::cout << std::endl;
+    bill.print2();
+    
+
 }
