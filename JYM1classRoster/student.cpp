@@ -66,39 +66,17 @@ Student::Student(string studentIDInput, string firstNameInput,
 
 }
 
-//print method
+//print method... add commas after each element?
 void Student::print() {
-	std::cout << this->studentID<<" ";
-	std::cout << this->firstName<<" ";
-	std::cout << this->lastName<<" ";
-	std::cout << this->emailAddress<<" ";
-	std::cout << this->age<<" ";
-	
-	for (int i=0; i < 3; ++i) {
-		std::cout << " " << getNumberofDays()[i] << ", ";
-	};
-	if (degreeProgram == DegreeProgram::SECURITY) {
-		std::cout << DegreeProgramStrings[0];
-	}
-	else if (degreeProgram == DegreeProgram::NETWORK) {
-		std::cout << DegreeProgramStrings[1];
-	}
-	else std::cout << DegreeProgramStrings[2];
-	
-	
-
-		
-};
-
-void Student::print2() {
-	std::cout << getStudentID() << " ";
-	std::cout << getFirstName() << " ";
-	std::cout << getLastName() << " ";
-	std::cout << getEmailAddress() << " ";
-	std::cout << getAge() << " ";
+	std::cout << getStudentID() << ", ";
+	std::cout << getFirstName() << ", ";
+	std::cout << getLastName() << ", ";
+	std::cout << getEmailAddress() << ", ";
+	std::cout << getAge() << ", ";
 	//add .sizeoperator or some other size detecting option
 	for (int i=0; i < 3; ++i) {
 		std::cout << " " << getNumberofDays()[i] << ", ";
 	};
 	std::cout << getDegreeProgram() << " ";
-}
+	
+};

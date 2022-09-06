@@ -21,7 +21,7 @@ int main()
     
     bill.print();
     std::cout << std::endl;
-    bill.print2();
+    
     
 
 }
