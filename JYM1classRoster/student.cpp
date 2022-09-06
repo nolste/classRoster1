@@ -68,15 +68,15 @@ Student::Student(string studentIDInput, string firstNameInput,
 
 //print method... add commas after each element?
 void Student::print() {
-	std::cout << getStudentID() << ", ";
-	std::cout << getFirstName() << ", ";
-	std::cout << getLastName() << ", ";
-	std::cout << getEmailAddress() << ", ";
-	std::cout << getAge() << ", ";
+	std::cout << getStudentID() << "\t";
+	std::cout << getFirstName() << "\t";
+	std::cout << getLastName() << "\t";
+	std::cout << getEmailAddress() << "\t";
+	std::cout << getAge() << "\t";
 	//add .sizeoperator or some other size detecting option
 	for (int i=0; i < 3; ++i) {
-		std::cout << " " << getNumberofDays()[i] << ", ";
+		std::cout << " " << getNumberofDays()[i] << "\t";
 	};
-	std::cout << getDegreeProgram() << " ";
+	std::cout << getDegreeProgram();
 	
 };

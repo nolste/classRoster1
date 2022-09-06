@@ -15,6 +15,9 @@ int main()
         "A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY",
         "A5,Nolan,Steiner,jsteiner@wgu.edu,30, 3,2,1,SOFTWARE"
     };
+    for (const auto stu : studentData) {
+
+    }
     Student bill("A1", "John", "Smith", "John1989@gmail.com", 20, 30, 35, 40,DegreeProgram::NETWORK);
     std::cout << "bill's age is " << bill.getAge() << " gracias" << std::endl;
     std::cout << "bill's num of days " << bill.getNumberofDays()[0] << " obrigado" << std::endl;
