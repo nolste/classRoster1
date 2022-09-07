@@ -40,6 +40,7 @@ public:
 		string lastNameInput, string emailAddressInput, int ageInput,
 		int numofdays1, int numofdays2, int numofdays3,
 		DegreeProgram degreeProgramInput);
+	Student() = default;
 	//print method
 	void print();
 	

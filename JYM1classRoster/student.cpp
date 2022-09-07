@@ -66,6 +66,7 @@ Student::Student(string studentIDInput, string firstNameInput,
 
 }
 
+
 //print method... add commas after each element?
 void Student::print() {
 	std::cout << getStudentID() << "\t";
