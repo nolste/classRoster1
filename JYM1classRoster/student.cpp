@@ -41,7 +41,7 @@ int Student::getAge() {
 	return age;
 };
 
-const int* Student::getNumberofDays() const {
+int* Student::getNumberofDays(){
 	return numberOfdays;
 
 };

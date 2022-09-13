@@ -16,29 +16,23 @@ int main()
         "A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY",
         "A5,Nolan,Steiner,jsteiner@wgu.edu,30, 3,2,1,SOFTWARE"
     };
-    //Roster* classRoster[5]{nullptr,nullptr,nullptr,nullptr,nullptr};
-    
-    //for (int i = 0; i < 5; i++) {
-    //    classRoster[i]=Roster::parse(studentData[i]);
-    //}
-    Student bill("A1", "John", "Smith", "John1989@gmail.com", 20, 30, 35, 40,DegreeProgram::NETWORK);
-    std::cout << "bill's age is " << bill.getAge() << " gracias" << std::endl;
-    std::cout << "bill's num of days " << bill.getNumberofDays()[0] << " obrigado" << std::endl;
-    
-    bill.print();
-    std::cout << std::endl;
 
-    Student* classRosterArray[5]{};
 
-    for (int i = 0; i < 5; i++ ) {
-        classRosterArray[i] = new Student();
-    }
-    for (int i = 0; i < 5; i++) {
-		classRosterArray[i] = Roster::parse(studentData[i]);
-		//classRosterArray[i]->print();
+
+  
+    Roster roster;
+
+
+    for (int i = 0; i < Roster::numStudents; i++) {
+		roster.parse(studentData[i]);
+		
 	}
+    roster.printAll();
+    roster.printAverageDaysInCourse("A1");
+    
+
     //classRosterArray[6] = new Student();
-    Roster::add("A5", "Nolan", "Steiner", "jsteiner@wgu.edu", 30, 3, 2, 1, DegreeProgram::SOFTWARE);
+    //gary("A5", "Nolan", "Steiner", "jsteiner@wgu.edu", 30, 3, 2, 1, DegreeProgram::SOFTWARE);
 
 }
 

@@ -11,7 +11,7 @@ const std::string studentData[] = {
 
 
 
-Student* Roster::parse(string data) {
+void Roster::parse(string data) {
 	size_t rhs = data.find(",");
 	string studentID = data.substr(0, rhs);
 
@@ -60,16 +60,36 @@ Student* Roster::parse(string data) {
 	else if (degreeProgram == "SOFTWARE") {
 		degree = DegreeProgram::SOFTWARE;
 	}
-	return new Student(studentID, firstName, lastName, email, age, numofdays1, numofdays2, numofdays3, degree);
+	add(studentID, firstName, lastName, email, age, numofdays1, numofdays2, numofdays3, degree);
 	
 
 
 
 }
 
-Student* Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age,
+void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age,
 	int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeprogram) {
 
-	return new Student(studentID, firstName, lastName, emailAddress, age, daysInCourse1, daysInCourse2, daysInCourse3, degreeprogram);
+	Roster::classRosterArray[++index] = new Student(studentID, firstName, lastName, emailAddress, age, daysInCourse1, daysInCourse2, daysInCourse3, degreeprogram);
+}
+
+void Roster::printAll() {
+	for (int i = 0; i < numStudents; ++i){
+		classRosterArray[i]->print();
+		std::cout << std::endl;
+	}
+}
+void Roster::printAverageDaysInCourse(string studentIDInput) {
+	
+	for (int i = 0; i < numStudents; ++i) {
+		if (studentIDInput == classRosterArray[i]->getStudentID()) {
+			for (int j = 0; j < 2; ++j) {
+				sum+=classRosterArray[i]->getNumberofDays()[j];
+			};
+			
+		}
+		
+	}
+	std::cout <<"Average days in course for "<< studentIDInput<<": "<< sum / 3;
 }
 

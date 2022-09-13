@@ -13,16 +13,18 @@ private:
 	
 
 public:
-	//const static int numStudents = 5;
+	int sum = 0;
+	int index = -1;
+	const static int numStudents = 5;
+	Student* classRosterArray[numStudents];
 	//methods
 	//int getNumStudents();
-	static Student* parse(string);
-	static Student* add(string studentID, string firstName, string lastName, string emailAddress,
+	void parse(string);
+	void add(string studentID, string firstName, string lastName, string emailAddress,
 		int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeprogram);
-	//void add();
 	//void remove(string studentID);
-	//void printAll();
-	//void printAverageDaysInCourse(string studentID);
+	void printAll();
+	void printAverageDaysInCourse(string studentID);
 	//void printInvalidEmails();
 
 

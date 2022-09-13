@@ -33,7 +33,7 @@ public:
 	string getLastName();
 	string getEmailAddress();
 	int getAge();
-	const int* getNumberofDays()const;
+	int* getNumberofDays();
 	string getDegreeProgram();
 	//constructor
 	Student(string studentIDInput, string firstNameInput,
