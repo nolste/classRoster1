@@ -29,6 +29,8 @@ int main()
 	}
     roster.printAll();
     roster.printAverageDaysInCourse("A1");
+    //roster.add("A6", "Nolan", "Steiner", "jsteiner@wgu.edu", 30, 3, 2, 1, DegreeProgram::SOFTWARE);
+    roster.printInvalidEmails();
     
 
     //classRosterArray[6] = new Student();

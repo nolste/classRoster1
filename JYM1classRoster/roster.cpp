@@ -74,14 +74,14 @@ void Roster::add(string studentID, string firstName, string lastName, string ema
 }
 
 void Roster::printAll() {
-	for (int i = 0; i < numStudents; ++i){
+	for (int i = 0; i <= index; ++i){
 		classRosterArray[i]->print();
 		std::cout << std::endl;
 	}
 }
 void Roster::printAverageDaysInCourse(string studentIDInput) {
 	
-	for (int i = 0; i < numStudents; ++i) {
+	for (int i = 0; i <=index; ++i) {
 		if (studentIDInput == classRosterArray[i]->getStudentID()) {
 			for (int j = 0; j < 2; ++j) {
 				sum+=classRosterArray[i]->getNumberofDays()[j];
@@ -90,6 +90,19 @@ void Roster::printAverageDaysInCourse(string studentIDInput) {
 		}
 		
 	}
-	std::cout <<"Average days in course for "<< studentIDInput<<": "<< sum / 3;
+	std::cout <<"Average days in course for "<< studentIDInput<<": "<< sum / 3<<std::endl;
+}
+void Roster::printInvalidEmails() {
+	for (int i = 0; i < numStudents; ++i) {
+		bool emailfind = false;
+		string email = classRosterArray[i]->getEmailAddress();
+		if (email.find("@") == string::npos || email.find(".") == string::npos || email.find(" ") != string::npos) {
+			emailfind == true;
+			std::cout << "Found an invalid email, that email was: " << classRosterArray[i]->getEmailAddress()<<std::endl;
+
+			
+		}
+
+	}
 }
 
