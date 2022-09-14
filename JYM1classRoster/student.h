@@ -43,6 +43,8 @@ public:
 	Student() = default;
 	//print method
 	void print();
+	//destructor
+	~Student();
 	
 
 

@@ -81,3 +81,6 @@ void Student::print() {
 	std::cout << getDegreeProgram();
 	
 };
+Student::~Student() {
+	std::cout << "student destructor called" << std::endl;
+};
