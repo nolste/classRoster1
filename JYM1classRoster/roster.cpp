@@ -85,17 +85,20 @@ void Roster::printAll() {
 	std::cout << "\n";
 }
 void Roster::printAverageDaysInCourse(string studentIDInput) {
+	float averageDays;
 	//for loop that matches the studentIDinput and then adds the sum of the 3 days
 	for (int i = 0; i <=index; ++i) {
+		sum = 0;
 		if (studentIDInput == classRosterArray[i]->getStudentID()) {
 			for (int j = 0; j < 2; ++j) {
 				sum+=classRosterArray[i]->getNumberofDays()[j];
+				averageDays = sum / 3;
 			};
 			
 		}
 		
 	}
-	std::cout << "Average days in course for " << studentIDInput << ": " << sum / 3 << std::endl << "\n";
+	std::cout << "Average days in course for " << studentIDInput << ": " << averageDays << std::endl << "\n";
 }
 void Roster::printInvalidEmails() {
 	
@@ -139,6 +142,12 @@ void Roster::printByDegreeProgram(string degreeProgramInput) {
 		}
 	}
 	std::cout << "\n";
+
+}
+Roster::~Roster() {
+	std::cout << "Destructor Called!" << std::endl;
+	
+	
 
 }
 

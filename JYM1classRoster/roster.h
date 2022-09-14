@@ -13,7 +13,7 @@ private:
 	
 
 public:
-	int sum = 0;
+	float sum = 0;
 	int index = -1;
 	const static int numStudents = 5;
 	Student* classRosterArray[numStudents];
@@ -27,7 +27,7 @@ public:
 	void printAverageDaysInCourse(string studentID);
 	void printInvalidEmails();
 	void printByDegreeProgram(string degreeProgramInput);
-
+	~Roster();
 
 
 };

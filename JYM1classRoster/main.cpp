@@ -27,7 +27,10 @@ int main()
 
     roster.printAll();
     roster.printInvalidEmails();
-    roster.printAverageDaysInCourse("A1");
+    for (int i = 0; i < Roster::numStudents; i++) {
+        roster.printAverageDaysInCourse(roster.classRosterArray[i]->Student::getStudentID());
+    }
+      
     roster.printByDegreeProgram("SOFTWARE");
     roster.remove("A3");
     roster.printAll();
