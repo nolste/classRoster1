@@ -3,7 +3,6 @@
 #include "degree.h"
 #include "roster.h"
 #include "student.h"
-//using namespace Roster;
 
 
 int main()
@@ -31,10 +30,12 @@ int main()
     roster.printAverageDaysInCourse("A1");
     //roster.add("A6", "Nolan", "Steiner", "jsteiner@wgu.edu", 30, 3, 2, 1, DegreeProgram::SOFTWARE);
     roster.printInvalidEmails();
+    roster.remove("A1");
+    roster.printAll();
+
     
 
-    //classRosterArray[6] = new Student();
-    //gary("A5", "Nolan", "Steiner", "jsteiner@wgu.edu", 30, 3, 2, 1, DegreeProgram::SOFTWARE);
+
 
 }
 

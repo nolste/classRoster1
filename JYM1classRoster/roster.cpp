@@ -1,6 +1,7 @@
 #include "roster.h"
 #include "student.h"
 
+//data to be input
 const std::string studentData[] = {
 "A1,John,Smith,John1989@gm ail.com,20,30,35,40,SECURITY",
 "A2,Suzan,Erickson,Erickson_1990@gmailcom,19,50,30,40,NETWORK",
@@ -69,18 +70,20 @@ void Roster::parse(string data) {
 
 void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age,
 	int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeprogram) {
-
+	//adding to index in order to keep track of size
 	Roster::classRosterArray[++index] = new Student(studentID, firstName, lastName, emailAddress, age, daysInCourse1, daysInCourse2, daysInCourse3, degreeprogram);
 }
 
 void Roster::printAll() {
 	for (int i = 0; i <= index; ++i){
-		classRosterArray[i]->print();
-		std::cout << std::endl;
+		if (classRosterArray[i] != nullptr) {
+			classRosterArray[i]->print();
+			std::cout << std::endl;
+		}
 	}
 }
 void Roster::printAverageDaysInCourse(string studentIDInput) {
-	
+	//for loop that matches the studentIDinput and then adds the sum of the 3 days
 	for (int i = 0; i <=index; ++i) {
 		if (studentIDInput == classRosterArray[i]->getStudentID()) {
 			for (int j = 0; j < 2; ++j) {
@@ -93,11 +96,13 @@ void Roster::printAverageDaysInCourse(string studentIDInput) {
 	std::cout <<"Average days in course for "<< studentIDInput<<": "<< sum / 3<<std::endl;
 }
 void Roster::printInvalidEmails() {
+	
 	for (int i = 0; i < numStudents; ++i) {
 		bool emailfind = false;
 		string email = classRosterArray[i]->getEmailAddress();
+		//find returns string::npos if not found, so == "@" means @ was not found
 		if (email.find("@") == string::npos || email.find(".") == string::npos || email.find(" ") != string::npos) {
-			emailfind == true;
+			emailfind = true;
 			std::cout << "Found an invalid email, that email was: " << classRosterArray[i]->getEmailAddress()<<std::endl;
 
 			
@@ -105,4 +110,20 @@ void Roster::printInvalidEmails() {
 
 	}
 }
+
+
+void Roster::remove(string studentIDInput){
+	for (int i = 0; i <= index; ++i) {
+		if (classRosterArray[i] == nullptr) {
+			std::cout << studentIDInput << " does not exist in this roster." << std::endl;
+		}
+		else if (studentIDInput == classRosterArray[i]->getStudentID()) {
+			classRosterArray[i] = nullptr;
+			std::cout << "Student with ID: " << studentIDInput << " was deleted." << std::endl;
+			
+		}
+		
+	}
+}
+
 
