@@ -75,12 +75,14 @@ void Roster::add(string studentID, string firstName, string lastName, string ema
 }
 
 void Roster::printAll() {
+	std::cout << "Printing all students:" << std::endl;
 	for (int i = 0; i <= index; ++i){
 		if (classRosterArray[i] != nullptr) {
 			classRosterArray[i]->print();
 			std::cout << std::endl;
 		}
 	}
+	std::cout << "\n";
 }
 void Roster::printAverageDaysInCourse(string studentIDInput) {
 	//for loop that matches the studentIDinput and then adds the sum of the 3 days
@@ -93,7 +95,7 @@ void Roster::printAverageDaysInCourse(string studentIDInput) {
 		}
 		
 	}
-	std::cout <<"Average days in course for "<< studentIDInput<<": "<< sum / 3<<std::endl;
+	std::cout << "Average days in course for " << studentIDInput << ": " << sum / 3 << std::endl << "\n";
 }
 void Roster::printInvalidEmails() {
 	
@@ -109,13 +111,14 @@ void Roster::printInvalidEmails() {
 		}
 
 	}
+	std::cout << "\n";
 }
 
 
 void Roster::remove(string studentIDInput){
 	for (int i = 0; i <= index; ++i) {
 		if (classRosterArray[i] == nullptr) {
-			std::cout << studentIDInput << " does not exist in this roster." << std::endl;
+			std::cout <<"Error: Can not remove. "<< studentIDInput << " does not exist in this roster." << std::endl;
 		}
 		else if (studentIDInput == classRosterArray[i]->getStudentID()) {
 			classRosterArray[i] = nullptr;
@@ -124,6 +127,8 @@ void Roster::remove(string studentIDInput){
 		}
 		
 	}
+	std::cout << "\n";
+
 }
 void Roster::printByDegreeProgram(string degreeProgramInput) {
 	std::cout << "Printing students with degree type: " << degreeProgramInput << "\n";
@@ -133,6 +138,8 @@ void Roster::printByDegreeProgram(string degreeProgramInput) {
 			std::cout << std::endl;
 		}
 	}
+	std::cout << "\n";
+
 }
 
 
