@@ -32,7 +32,7 @@ int main()
     roster.printInvalidEmails();
     roster.remove("A1");
     roster.printAll();
-
+    roster.printByDegreeProgram("SOFTWARE");
     
 
 

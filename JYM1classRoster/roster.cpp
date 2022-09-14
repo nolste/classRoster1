@@ -125,5 +125,14 @@ void Roster::remove(string studentIDInput){
 		
 	}
 }
+void Roster::printByDegreeProgram(string degreeProgramInput) {
+	std::cout << "Printing students with degree type: " << degreeProgramInput << "\n";
+	for (int i = 0; i <= index; ++i) {
+		if (classRosterArray[i] != nullptr && degreeProgramInput == classRosterArray[i]->getDegreeProgram()) {
+			classRosterArray[i]->print();
+			std::cout << std::endl;
+		}
+	}
+}
 
 

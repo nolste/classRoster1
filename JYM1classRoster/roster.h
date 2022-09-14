@@ -26,6 +26,7 @@ public:
 	void printAll();
 	void printAverageDaysInCourse(string studentID);
 	void printInvalidEmails();
+	void printByDegreeProgram(string degreeProgramInput);
 
 
 
